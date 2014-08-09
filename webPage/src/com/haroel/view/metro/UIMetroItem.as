@@ -14,7 +14,7 @@ package com.haroel.view.metro
 	import flash.geom.Point;
 	import flash.text.TextField;
 	
-	import morn.core.handlers.Handler;
+//	import morn.core.handlers.Handler;
 
 	public class UIMetroItem extends Sprite
 	{

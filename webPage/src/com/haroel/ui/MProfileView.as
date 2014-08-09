@@ -1,6 +1,9 @@
 package com.haroel.ui
 {
+	import com.greensock.*; 
+	import com.greensock.easing.*;	
 	import flash.events.MouseEvent;
+	import flash.filters.BlurFilter;
 	import flash.net.URLRequest;
 	import flash.net.navigateToURL;
 	
@@ -9,7 +12,7 @@ package com.haroel.ui
 	import morn.core.components.View;
 	import morn.core.events.UIEvent;
 	import morn.core.handlers.Handler;
-	
+
 	public class MProfileView extends View
 	{
 		public var m_collBtn:LinkButton;
@@ -50,6 +53,9 @@ package com.haroel.ui
 			if (m_avatar.bitmapData)
 			{
 				m_avatar.height = m_avatar.bitmapData.height * m_avatar.width/m_avatar.bitmapData.width;
+				m_avatar.filters = [new BlurFilter(20,20)];
+				TweenMax.to(m_avatar, 0.5, {blurFilter:{blurX:0,blurY:0}});
+				
 				m_avatar.visible = true;
 			}
 		}

@@ -143,7 +143,7 @@ package com.haroel.view
 			
 			// Home Icon Button
 			var homeIconItem:IconItemRenderer = new IconItemRenderer();
-			homeIconItem.setInfo("BCalendar",HOME_ID);
+			homeIconItem.setInfo("BHome",HOME_ID);
 			homeIconItem.y = Main.stageHeight * 1.5;
 			homeIconItem.x = (MovieClip)(_material.m_dockBg).x;
 			_animaterLayer.addChild(homeIconItem);

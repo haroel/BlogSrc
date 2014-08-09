@@ -49,8 +49,9 @@ package com.haroel.view
 			
 			var bitmapDataCls:Class = App.asset.getClass(_icon);
 			var _iconBitmap:Bitmap = new Bitmap(new bitmapDataCls(),"auto",true);
-			_iconBitmap.width = 64;
-			_iconBitmap.height = 64;
+//			_iconBitmap.width = 64;
+//			_iconBitmap.height = 64;
+			_iconBitmap.scaleX = _iconBitmap.scaleY = 0.5;
 			_iconBitmap.x = (_material.width - _iconBitmap.width)/2;
 			_iconBitmap.name = "icon";
 			(MovieClip)(_material.m_iconMC).addChild(_iconBitmap);
@@ -139,38 +140,6 @@ package com.haroel.view
 			}
 		}
 		
-		private function addReflection(picSource:BitmapData,parent:DisplayObjectContainer,postion:Point):void
-		{
-			// 倒置
-			var bd:BitmapData = new BitmapData(picSource.width, picSource.height, true, 0x12346f);
-			var mtx:Matrix = new Matrix();
-			mtx.d = -1;
-			mtx.ty = bd.height;
-			bd.draw(picSource, mtx);
-			// 添加渐变遮罩
-			var width:int = bd.width;
-			var height:int = bd.height;
-			mtx = new Matrix();
-			mtx.createGradientBox(width, height, 0.5 * Math.PI);
-			var shape:Shape = new Shape();
-//			new GradientType;
-			shape.graphics.beginGradientFill(GradientType.LINEAR, [0, 0], [0.9, 0.2], [0, 0xFF], mtx);
-			shape.graphics.drawRect(0, 0, width, height);
-			shape.graphics.endFill();
-			var mask_bd:BitmapData = new BitmapData(width, height, true, 0);
-			mask_bd.draw(shape);
-			// 生成最终效果
-//			new Point;
-			bd.copyPixels(bd, bd.rect, new Point(0, 0), mask_bd, new Point(0, 0), false);
-			// 将倒影放置于图片下方
-			var ref:Bitmap = new Bitmap();
-			ref.bitmapData = bd;
-			ref.x = postion.x;
-			ref.y = postion.y;
-			ref.name = "ref";
-			parent.addChild(ref);
-		}
-		
 		public function get id():int
 		{
 			return _id;
@@ -199,6 +168,38 @@ package com.haroel.view
 					break;
 				}
 			}
+		}
+		
+		private function addReflection(picSource:BitmapData,parent:DisplayObjectContainer,postion:Point):void
+		{
+			// 倒置
+			var bd:BitmapData = new BitmapData(picSource.width, picSource.height, true, 0x12346f);
+			var mtx:Matrix = new Matrix();
+			mtx.d = -1;
+			mtx.ty = bd.height;
+			bd.draw(picSource, mtx);
+			// 添加渐变遮罩
+			var width:int = bd.width;
+			var height:int = bd.height;
+			mtx = new Matrix();
+			mtx.createGradientBox(width, height, 0.5 * Math.PI);
+			var shape:Shape = new Shape();
+			//			new GradientType;
+			shape.graphics.beginGradientFill(GradientType.LINEAR, [0, 0], [0.9, 0.2], [0, 0xFF], mtx);
+			shape.graphics.drawRect(0, 0, width, height);
+			shape.graphics.endFill();
+			var mask_bd:BitmapData = new BitmapData(width, height, true, 0);
+			mask_bd.draw(shape);
+			// 生成最终效果
+			//			new Point;
+			bd.copyPixels(bd, bd.rect, new Point(0, 0), mask_bd, new Point(0, 0), false);
+			// 将倒影放置于图片下方
+			var ref:Bitmap = new Bitmap();
+			ref.bitmapData = bd;
+			ref.x = postion.x;
+			ref.y = postion.y;
+			ref.name = "ref";
+			parent.addChild(ref);
 		}
 	}
 }
