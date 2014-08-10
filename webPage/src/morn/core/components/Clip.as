@@ -132,7 +132,7 @@ package morn.core.components {
 			if (App.asset.hasClass(_url)) {
 				loadComplete(_url, false, App.asset.getBitmapData(_url, false));
 			} else {
-				App.loader.loadBMD(_url, new Handler(loadComplete, [_url, true]));
+				App.mloader.loadBMD(_url, 1, new Handler(loadComplete, [_url, true]));
 			}
 		}
 		
@@ -352,7 +352,7 @@ package morn.core.components {
 			_bitmap.bitmapData = null;
 			App.asset.destroyClips(_url);
 			if (clearFromLoader) {
-				App.loader.clearResLoaded(_url);
+				App.mloader.clearResLoaded(_url);
 			}
 		}
 	}

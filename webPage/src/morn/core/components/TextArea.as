@@ -74,7 +74,7 @@ package morn.core.components {
 		public function set hScrollBarSkin(value:String):void {
 			if (_hScrollBar == null) {
 				addChild(_hScrollBar = new HScrollBar());
-				_hScrollBar.addEventListener(Event.CHANGE, onScrollBarChange);				
+				_hScrollBar.addEventListener(Event.CHANGE, onScrollBarChange);
 				_hScrollBar.mouseWheelEnable = false;
 				_hScrollBar.target = _textField;
 				callLater(changeScroll);

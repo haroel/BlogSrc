@@ -29,7 +29,7 @@ package morn.core.components {
 			items.sortOn(["x"], Array.NUMERIC);
 			var left:Number = 0;
 			for each (item in items) {
-				item.x = left;
+				item.x = _maxX = left;
 				left += item.displayWidth + _space;
 				if (_align == TOP) {
 					item.y = 0;

@@ -171,6 +171,16 @@ package morn.core.managers {
 			ResLoader.clearResLoaded(url);
 		}
 		
+		/**停止并清理当前未完成的加载*/
+		public function stopAndClearLoad():void {
+			_resInfos.length = 0;
+			for each (var loader:ResLoader in _resLoaders) {
+				loader.tryToCloseLoad();
+			}
+			_loaderCount = 0;
+			_resMap = {};
+		}
+		
 		/**加载出错后的重试次数，默认重试一次*/
 		public function get retryNum():int {
 			return _retryNum;

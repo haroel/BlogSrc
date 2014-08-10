@@ -57,5 +57,8 @@ package morn.core.components {
 		public static var tipBorderColor:uint = 0xC0C0C0;
 		/**默认鼠标提示背景颜色*/
 		public static var tipBgColor:uint = 0xFFFFFF;
+		
+		/**默认图片是否平滑处理*/
+		public static var smoothing:Boolean = false;
 	}
 }

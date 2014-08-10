@@ -14,6 +14,9 @@ package com.haroel.view.metro
 	import flash.geom.Point;
 	import flash.text.TextField;
 	
+	import morn.core.components.AutoBitmap;
+	import morn.core.components.Label;
+	
 //	import morn.core.handlers.Handler;
 
 	public class UIMetroItem extends Sprite
@@ -146,6 +149,21 @@ package com.haroel.view.metro
 			_material.buttonMode = true;
 			_material.mouseChildren = false;
 //			_material.mouseEnabled = false;
+			
+			var l:Label = new Label();
+			l.text = "个人简介";
+
+			l.skin = "dockItemTip_bg";
+			l.sizeGrid = "23,0,23,0";
+//			l.background = true;
+			
+//			this.addChild(l);
+//			
+//		var tip:IconItemTips = new IconItemTips();
+//		tip.label = _menuItemVO.label;
+//		this.addChild(tip);
+//			cls = App.asset.getClass("dockItemTip_bg");
+//			var bmpd:BitmapData = new cls();
 		}
 		public function removeNode():void
 		{

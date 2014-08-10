@@ -3,7 +3,7 @@
  * Feedback yungzhu@gmail.com http://weibo.com/newyung
  */
 package morn.editor {
-	import flash.display.BitmapData;	
+	import flash.display.BitmapData;
 	import morn.core.managers.AssetManager;
 	import morn.core.utils.BitmapUtils;
 	

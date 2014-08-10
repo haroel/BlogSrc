@@ -9,6 +9,7 @@ package morn.core.components {
 	import morn.core.utils.ObjectUtils;
 	import morn.core.utils.StringUtils;
 	
+	
 	/**selected属性变化时调度*/
 	[Event(name="change",type="flash.events.Event")]
 	
@@ -161,16 +162,6 @@ package morn.core.components {
 			}
 		}
 		
-		/**按钮标签字体*/
-		public function get labelFont():String {
-			return _btnLabel.font;
-		}
-		
-		public function set labelFont(value:String):void {
-			_btnLabel.font = value
-			callLater(changeLabelSize);
-		}
-		
 		/**按钮标签颜色(格式:upColor,overColor,downColor,disableColor)*/
 		public function get labelColors():String {
 			return String(_labelColors);
@@ -227,6 +218,16 @@ package morn.core.components {
 		
 		public function set letterSpacing(value:Object):void {
 			_btnLabel.letterSpacing = value
+			callLater(changeLabelSize);
+		}
+		
+		/**按钮标签字体*/
+		public function get labelFont():String {
+			return _btnLabel.font;
+		}
+		
+		public function set labelFont(value:String):void {
+			_btnLabel.font = value;
 			callLater(changeLabelSize);
 		}
 		

@@ -135,7 +135,7 @@ package morn.core.components {
 			var max:Number = 0;
 			for (var i:int = numChildren - 1; i > -1; i--) {
 				var comp:DisplayObject = getChildAt(i);
-				if (comp.visible) {						
+				if (comp.visible) {
 					max = Math.max(comp.x + comp.width * comp.scaleX, max);
 				}
 			}
@@ -174,7 +174,7 @@ package morn.core.components {
 			var max:Number = 0;
 			for (var i:int = numChildren - 1; i > -1; i--) {
 				var comp:DisplayObject = getChildAt(i);
-				if (comp.visible) {						
+				if (comp.visible) {
 					max = Math.max(comp.y + comp.height * comp.scaleY, max);
 				}
 			}

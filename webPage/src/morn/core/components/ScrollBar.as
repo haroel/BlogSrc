@@ -30,7 +30,7 @@ package morn.core.components {
 		protected var _touchScrollEnable:Boolean = Config.touchScrollEnable;
 		protected var _mouseWheelEnable:Boolean = Config.mouseWheelEnable;
 		protected var _lastPoint:Point;
-		protected var _lastOffset:Number;
+		protected var _lastOffset:Number = 0;
 		protected var _autoHide:Boolean = true;
 		protected var _showButtons:Boolean = true;
 		
@@ -323,6 +323,7 @@ package morn.core.components {
 		protected function onStageMouseUp2(e:MouseEvent):void {
 			App.stage.removeEventListener(MouseEvent.MOUSE_UP, onStageMouseUp2);
 			App.stage.removeEventListener(Event.ENTER_FRAME, onStageEnterFrame);
+			_lastOffset = _slider.direction == VERTICAL ? App.stage.mouseY - _lastPoint.y : App.stage.mouseX - _lastPoint.x;
 			if (Math.abs(_lastOffset) > 50) {
 				_lastOffset = 50 * (_lastOffset > 0 ? 1 : -1);
 			}
@@ -339,7 +340,7 @@ package morn.core.components {
 		}
 		
 		protected function onMouseWheel(e:MouseEvent):void {
-			value += (e.delta < 0 ? 1 : -1)  * _scrollSize * 3;
+			value += (e.delta < 0 ? 1 : -1) * _scrollSize * 3;
 			if (value < max && value > min) {
 				e.stopPropagation();
 			}

@@ -142,13 +142,17 @@ package com.haroel.view
 			var duration:Number = 1.0;
 			
 			// Home Icon Button
-			var homeIconItem:IconItemRenderer = new IconItemRenderer();
-			homeIconItem.setInfo("BHome",HOME_ID);
-			homeIconItem.y = Main.stageHeight * 1.5;
-			homeIconItem.x = (MovieClip)(_material.m_dockBg).x;
-			_animaterLayer.addChild(homeIconItem);
-			_dockItemHash.addItem(homeIconItem.id,homeIconItem);
-
+			
+			var homeInfo:MenuItemVO = ModelLocator.getInstance().getMenuItemVOById(HOME_ID);
+			if (homeInfo)
+			{
+				var homeIconItem:IconItemRenderer = new IconItemRenderer();
+				homeIconItem.setInfo(homeInfo.icon,homeInfo.id);
+				homeIconItem.y = Main.stageHeight * 1.5;
+				homeIconItem.x = (MovieClip)(_material.m_dockBg).x;
+				_animaterLayer.addChild(homeIconItem);
+				_dockItemHash.addItem(homeIconItem.id,homeIconItem);
+			}
 			//播放iconitem 运动效果 并删除之前的metroitem
 			var arr:Array = _menuItemHash.getItems;
 			for each (var metroItem:UIMetroItem in arr)
@@ -165,7 +169,8 @@ package com.haroel.view
 			}		
 			//dock栏出现
 			TweenLite.to((MovieClip)(_material.m_dockBg), duration,
-				{y:Main.stageHeight - (MovieClip)(_material.m_dockBg).height, motionBlur:true, ease:Cubic.easeInOut,onComplete:dockPlayOverHandler});
+				{y:Main.stageHeight - (MovieClip)(_material.m_dockBg).height, motionBlur:true, ease:Cubic.easeInOut,
+					onComplete:dockPlayOverHandler});
 			
 			function dockPlayOverHandler():void
 			{
@@ -229,9 +234,7 @@ package com.haroel.view
 					function completeHandler(value1:UIMetroItem,value2:IconItemRenderer):void
 					{
 						value1.addIconItem(value2);
-					}
-//					iconItem.x = animatePoint.x;
-//					iconItem.y = animatePoint.y;					
+					}				
 				}
 				else
 				{

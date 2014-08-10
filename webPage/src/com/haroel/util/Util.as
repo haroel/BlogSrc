@@ -1,5 +1,6 @@
 package com.haroel.util
 {
+	import flash.display.DisplayObjectContainer;
 	import flash.system.ApplicationDomain;
 
 	public class Util
@@ -14,11 +15,19 @@ package com.haroel.util
 		 * @return 
 		 * 
 		 */		
-		public static function getResSwf(fileName:String,className:String):Class
+//		public static function getResSwf(fileName:String,className:String):Class
+//		{
+//			var obj:Object = ApplicationDomain(getRes(fileName))
+//			var cls:Class =  obj .getDefinition(className) as Class;
+//			return cls;
+//		}
+		
+		public static function removeAllChildren(container:DisplayObjectContainer):void
 		{
-			var obj:Object = ApplicationDomain(getRes(fileName))
-			var cls:Class =  obj .getDefinition(className) as Class;
-			return cls;
+			while(container.numChildren > 0)
+			{
+				container.removeChildAt(0);
+			}
 		}
 	}
 }

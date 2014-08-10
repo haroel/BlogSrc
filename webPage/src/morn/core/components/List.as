@@ -23,8 +23,10 @@ package morn.core.components {
 		protected var _content:Box;
 		protected var _scrollBar:ScrollBar;
 		protected var _itemRender:*;
-		protected var _repeatX:int = 1;
-		protected var _repeatY:int = 1;
+		protected var _repeatX:int;
+		protected var _repeatY:int;
+		protected var _repeatX2:int;
+		protected var _repeatY2:int;
 		protected var _spaceX:int;
 		protected var _spaceY:int;
 		protected var _cells:Vector.<Box> = new Vector.<Box>();
@@ -89,7 +91,7 @@ package morn.core.components {
 		
 		/**X方向单元格数量*/
 		public function get repeatX():int {
-			return _repeatX;
+			return _repeatX > 0 ? _repeatX : _repeatX2 > 0 ? _repeatX2 : 1;
 		}
 		
 		public function set repeatX(value:int):void {
@@ -99,7 +101,7 @@ package morn.core.components {
 		
 		/**Y方向单元格数量*/
 		public function get repeatY():int {
-			return _repeatY;
+			return _repeatY > 0 ? _repeatY : _repeatY2 > 0 ? _repeatY2 : 1;
 		}
 		
 		public function set repeatY(value:int):void {
@@ -144,25 +146,27 @@ package morn.core.components {
 				
 				//自适应宽高
 				cell = _itemRender is XML ? View.createComp(_itemRender) as Box : new _itemRender();
-				if (_isVerticalLayout && !isNaN(_height)) {
-					_repeatY = Math.round(_height / (cell.height + _spaceY));
-					if (_scrollBar) {
-						_scrollBar.height = _height;
-					}
-				} else if (!_isVerticalLayout && !isNaN(_width)) {
-					_repeatX = Math.round(_width / (cell.width + _spaceX));
-					if (_scrollBar) {
-						_scrollBar.width = _width;
-					}
+				
+				if (_repeatX < 1 && !isNaN(_width)) {
+					_repeatX2 = Math.round(_width / (cell.width + _spaceX));
 				}
-				var cellWidth:Number = cell.width + spaceX;
-				var cellHeight:Number = cell.height + spaceY;
-				_cellSize = _isVerticalLayout ? cellHeight : cellWidth;
-				setContentSize(_width || cellWidth * _repeatX, _height || cellHeight * _repeatY);
+				if (_repeatY < 1 && !isNaN(_height)) {
+					_repeatY2 = Math.round(_height / (cell.height + _spaceY));
+				}
+				
+				var listWidth:Number = isNaN(_width) ? ((cell.width + _spaceX) * repeatX - _spaceX) : _width;
+				var listHeight:Number = isNaN(_height) ? ((cell.height + _spaceY) * repeatY - _spaceY) : _height;
+				
+				if (_isVerticalLayout && _scrollBar) {
+					_scrollBar.height = listHeight;
+				} else if (_isVerticalLayout && _scrollBar) {
+					_scrollBar.width = listWidth;
+				}
+				setContentSize(listWidth, listHeight);
 				
 				//创建新单元格				
-				var numX:int = _isVerticalLayout ? _repeatX : _repeatY;
-				var numY:int = (_isVerticalLayout ? _repeatY : _repeatX) + (_scrollBar ? 1 : 0);
+				var numX:int = _isVerticalLayout ? repeatX : repeatY;
+				var numY:int = (_isVerticalLayout ? repeatY : repeatX) + (_scrollBar ? 1 : 0);
 				for (var k:int = 0; k < numY; k++) {
 					for (var l:int = 0; l < numX; l++) {
 						cell = _itemRender is XML ? View.createComp(_itemRender) as Box : new _itemRender();
@@ -258,7 +262,7 @@ package morn.core.components {
 			exeCallLater(changeCells);
 			var rect:Rectangle = _content.scrollRect;
 			var scrollValue:Number = _scrollBar.value;
-			var index:int = int(scrollValue / _cellSize) * (_isVerticalLayout ? _repeatX : _repeatY);
+			var index:int = int(scrollValue / _cellSize) * (_isVerticalLayout ? repeatX : repeatY);
 			if (index != _startIndex) {
 				startIndex = index;
 			}
@@ -388,7 +392,7 @@ package morn.core.components {
 			exeCallLater(changeCells);
 			_array = value || [];
 			var length:int = _array.length;
-			_totalPage = Math.ceil(length / (_repeatX * _repeatY));
+			_totalPage = Math.ceil(length / (repeatX * repeatY));
 			//重设selectedIndex
 			_selectedIndex = _selectedIndex < length ? _selectedIndex : length - 1;
 			//重设startIndex
@@ -396,8 +400,8 @@ package morn.core.components {
 			//重设滚动条
 			if (_scrollBar) {
 				//自动隐藏滚动条
-				var numX:int = _isVerticalLayout ? _repeatX : _repeatY;
-				var numY:int = _isVerticalLayout ? _repeatY : _repeatX;
+				var numX:int = _isVerticalLayout ? repeatX : repeatY;
+				var numY:int = _isVerticalLayout ? repeatY : repeatX;
 				var lineCount:int = Math.ceil(length / numX);
 				_scrollBar.visible = _totalPage > 1;
 				if (_scrollBar.visible) {
@@ -425,9 +429,12 @@ package morn.core.components {
 		}
 		
 		public function set page(value:int):void {
-			_page = value > 0 ? value : 0;
-			_page = _page < _totalPage ? _page : _totalPage - 1;
-			startIndex = _page * _repeatX * _repeatY;
+			_page = value
+			if (_array) {
+				_page = value > 0 ? value : 0;
+				_page = _page < _totalPage ? _page : _totalPage - 1;
+				startIndex = _page * repeatX * repeatY;
+			}
 		}
 		
 		/**列表数据总数*/
@@ -541,7 +548,7 @@ package morn.core.components {
 		public function scrollTo(index:int):void {
 			startIndex = index;
 			if (_scrollBar) {
-				var numX:int = _isVerticalLayout ? _repeatX : _repeatY;
+				var numX:int = _isVerticalLayout ? repeatX : repeatY;
 				_scrollBar.value = (index / numX) * _cellSize;
 			}
 		}

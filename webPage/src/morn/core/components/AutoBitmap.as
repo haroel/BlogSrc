@@ -15,7 +15,7 @@ package morn.core.components {
 		private var _source:Vector.<BitmapData>;
 		private var _clips:Vector.<BitmapData>;
 		private var _index:int;
-		private var _smoothing:Boolean;
+		private var _smoothing:Boolean = Styles.smoothing;
 		private var _anchorX:Number;
 		private var _anchorY:Number;
 		

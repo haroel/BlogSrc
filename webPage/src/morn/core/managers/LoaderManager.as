@@ -143,6 +143,13 @@ package morn.core.managers {
 			}
 		}
 		
+		/**停止并清理当前未完成的加载*/
+		public function stopAndClearLoad():void {
+			_resInfos.length = 0;
+			_resLoader.tryToCloseLoad();
+			_isLoading = false;
+		}
+		
 		/**加载出错后的重试次数，默认重试一次*/
 		public function get retryNum():int {
 			return _retryNum;

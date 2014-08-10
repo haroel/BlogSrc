@@ -53,6 +53,8 @@ package {
 		
 		public static var animateLayer:Sprite = new Sprite();
 
+		public static var tipsLayer:Sprite = new Sprite();
+		
 		public static function init(main:Sprite):void {
 			stage = main.stage;
 			stage.frameRate = Config.GAME_FPS;
@@ -77,6 +79,7 @@ package {
 			stage.addChild(uiLayer);
 			stage.addChild(animateLayer);
 			stage.addChild(tip);
+			stage.addChild(tipsLayer);
 			//
 			stage.addChild(loaderLayer);
 			//

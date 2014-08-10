@@ -3,6 +3,8 @@ package com.haroel.view
 	import com.greensock.TweenLite;
 	import com.haroel.events.DDEvent;
 	import com.haroel.events.UIEventDispatcher;
+	import com.haroel.model.ModelLocator;
+	import com.haroel.util.Util;
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -18,6 +20,7 @@ package com.haroel.view
 	import flash.geom.Point;
 	import flash.text.TextField;
 	
+	
 	public class IconItemRenderer extends Sprite
 	{
 		private var _material:MovieClip = null;
@@ -32,7 +35,7 @@ package com.haroel.view
 		
 		private var _id:uint = 0;
 		private var _icon:String = "";
-		
+				
 		public function IconItemRenderer()
 		{
 			super();
@@ -57,7 +60,6 @@ package com.haroel.view
 			(MovieClip)(_material.m_iconMC).addChild(_iconBitmap);
 			
 			this.addChild(_material);
-			
 			this.width = _material.width;
 			this.height = _material.height;
 			
@@ -159,12 +161,24 @@ package com.haroel.view
 				}
 				case MouseEvent.ROLL_OUT:
 				{
-					TweenLite.to(_material, 0.1, {scaleX:1,scaleY:1});
+//					TweenLite.to(_material, 0.1, {scaleX:1,scaleY:1});
+					Util.removeAllChildren(App.tipsLayer);
+					
 					break;
 				}
 				case MouseEvent.ROLL_OVER:
 				{
-					TweenLite.to(_material, 0.1, {scaleX:1.05,scaleY:1.05});
+//					TweenLite.to(_material, 0.1, {scaleX:1.05,scaleY:1.05});
+					
+					Util.removeAllChildren(App.tipsLayer);
+					var p:Point =  _material.localToGlobal(new Point(0,0));
+					
+					var tips:IconItemTips = new IconItemTips();
+					tips.label = ModelLocator.getInstance().getMenuItemVOById(_id).label;
+					tips.x = p.x;
+					tips.y = p.y - 55;
+					App.tipsLayer.addChild(tips);
+					
 					break;
 				}
 			}

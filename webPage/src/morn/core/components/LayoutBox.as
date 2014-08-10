@@ -10,14 +10,28 @@ package morn.core.components {
 	public class LayoutBox extends Box {
 		protected var _space:Number = 0;
 		protected var _align:String = "none";
+		protected var _maxX:Number = 0;
+		protected var _maxY:Number = 0;
 		
 		public function LayoutBox() {
 		}
 		
 		override public function addChild(child:DisplayObject):DisplayObject {
+			setChild(child);
 			child.addEventListener(Event.RESIZE, onResize);
 			callLater(changeItems);
 			return super.addChild(child);
+		}
+		
+		private function setChild(child:DisplayObject):void {
+			if (child is Component) {
+				if (child.x == 0) {
+					child.x = ++_maxX;
+				}
+				if (child.y == 0) {
+					child.y = ++_maxY;
+				}
+			}
 		}
 		
 		private function onResize(e:Event):void {
@@ -25,6 +39,7 @@ package morn.core.components {
 		}
 		
 		override public function addChildAt(child:DisplayObject, index:int):DisplayObject {
+			setChild(child);
 			child.addEventListener(Event.RESIZE, onResize);
 			callLater(changeItems);
 			return super.addChildAt(child, index);

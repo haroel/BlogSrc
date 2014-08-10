@@ -6,6 +6,8 @@
     	<item label="Copyright©2014 howe" separatorBefore="true" enabled = "false"/>
     </rightmenu>
     <menus>
+        <item icon="BHome" id="0" label="首页" style = "0" color = "0xffffff"/>
+   
         <item icon="BProfile" id="1" label="个人简介" style = "1" color = "0x5f3bb9"/>
         <item icon="BEdu" id="2" label="教育经历" style = "1" color = "0xbe1e50"/>
         <item icon="BMessage" id="3" label="行业参与" style = "0" color = "0x00ccff"/>

@@ -13,6 +13,7 @@ package morn.core.components {
 	import morn.core.utils.ObjectUtils;
 	import morn.core.utils.StringUtils;
 	
+	
 	/**selectedIndex属性变化时调度*/
 	[Event(name="change",type="flash.events.Event")]
 	
@@ -319,38 +320,56 @@ package morn.core.components {
 		
 		/**按钮标签边距(格式:左边距,上边距,右边距,下边距)*/
 		public function get labelMargin():String {
-			return _button.labelMargin;
+			return _button.btnLabel.margin;
 		}
 		
 		public function set labelMargin(value:String):void {
-			_button.labelMargin = value;
+			_button.btnLabel.margin = value;
 		}
 		
 		/**按钮标签描边(格式:color,alpha,blurX,blurY,strength,quality)*/
 		public function get labelStroke():String {
-			return _button.labelStroke;
+			return _button.btnLabel.stroke;
 		}
 		
 		public function set labelStroke(value:String):void {
-			_button.labelStroke = value;
+			_button.btnLabel.stroke = value;
 		}
 		
 		/**按钮标签大小*/
 		public function get labelSize():Object {
-			return _button.labelSize;
+			return _button.btnLabel.size;
 		}
 		
 		public function set labelSize(value:Object):void {
-			_button.labelSize = value
+			_button.btnLabel.size = value
 		}
 		
 		/**按钮标签粗细*/
 		public function get labelBold():Object {
-			return _button.labelBold;
+			return _button.btnLabel.bold;
 		}
 		
 		public function set labelBold(value:Object):void {
-			_button.labelBold = value
+			_button.btnLabel.bold = value
+		}
+		
+		/**按钮标签字体*/
+		public function get labelFont():String {
+			return _button.btnLabel.font;
+		}
+		
+		public function set labelFont(value:String):void {
+			_button.btnLabel.font = value
+		}
+		
+		/**按钮状态数，支持单态，两态和三态按钮，分别对应1,2,3值，默认是三态*/
+		public function get stateNum():int {
+			return _button.stateNum;
+		}
+		
+		public function set stateNum(value:int):void {
+			_button.stateNum = value
 		}
 	}
 }

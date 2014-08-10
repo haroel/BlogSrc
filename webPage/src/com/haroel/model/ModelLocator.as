@@ -38,7 +38,18 @@ package com.haroel.model
 		
 		public function getMenuItemInfos():Array
 		{
-			return _menuHash.getItems;
+			var arr:Array = [];
+			var temp:Array = _menuHash.getItems;
+			
+			for each(var info:MenuItemVO in temp)
+			{
+				if (info.id == 0)
+				{
+					continue;
+				}
+				arr.push(info);
+			}			
+			return arr;
 		}
 		
 		public function getMenuItemVOById(id:int):MenuItemVO
