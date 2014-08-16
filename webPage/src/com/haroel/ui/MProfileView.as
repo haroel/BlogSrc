@@ -33,7 +33,6 @@ package com.haroel.ui
 			m_avatar.visible = false;
 			m_collBtn.addEventListener(MouseEvent.CLICK,clickHandler);
 			m_avatar.addEventListener(UIEvent.IMAGE_LOADED,imgLoadedHandler);
-			
 		}
 		private function clickHandler(evt:MouseEvent):void
 		{

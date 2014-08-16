@@ -2,7 +2,6 @@ package com.haroel.view
 {
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Bounce;
-	import com.haroel.events.DDEvent;
 	
 	import flash.events.Event;
 	
@@ -25,14 +24,16 @@ package com.haroel.view
 			this.removeEventListener(Event.ADDED_TO_STAGE,init);
 			this.name = MAINRESLOADER;
 			
-			this.progressBar.width = 0;
-			this.progressLabel.text = "0%";
-			
+			this.progressBar.width = 0;			
 		}
 		public function setProgress(value:int):void
 		{
-			progressLabel.text = value.toString() + "%";
-			progressBar.scaleX = 1.0 * value/100;
+			var percent:Number = 1.0 * value/100;
+			if (percent <= progressBar.scaleX)
+			{
+				return;
+			}
+			progressBar.scaleX = percent;
 		}
 
 		public function removeLoader(removeHandler:Handler = null):void

@@ -65,7 +65,12 @@ package morn.core.components {
 				_contentHeight = value.height;
 			}
 			_bitmap.bitmapData = value;
-			sendEvent(UIEvent.IMAGE_LOADED);
+			this.callLater(sendImgLoadedEvent);
+			
+			function sendImgLoadedEvent():void
+			{
+				sendEvent(UIEvent.IMAGE_LOADED);
+			}
 		}
 		
 		protected function setBitmapData(url:String, bmd:BitmapData):void {

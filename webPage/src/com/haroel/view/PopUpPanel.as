@@ -7,6 +7,7 @@ package com.haroel.view
 	import com.haroel.events.DDEvent;
 	import com.haroel.events.UIEventDispatcher;
 	import com.haroel.model.MenuItemVO;
+	import com.haroel.ui.MAbilityView;
 	import com.haroel.ui.MProfileView;
 	
 	import flash.display.MovieClip;
@@ -48,7 +49,15 @@ package com.haroel.view
 		}
 		private function moveInCompleteHandler():void
 		{
-			_material.addChild(new MProfileView());
+			if (_currentId == 2)
+			{
+				_material.addChild(new MAbilityView());
+
+			}
+			else
+			{
+				_material.addChild(new MProfileView());
+			}
 		}
 		
 		public function playMoveInAction():void
@@ -73,7 +82,7 @@ package com.haroel.view
 				return;
 			}
 			_currentId = value.id;
-			(TextField)(_material.m_label).text = value.label;
+			
 		}
 		public function get material():MovieClip
 		{
