@@ -33,9 +33,8 @@ package com.haroel.ui
 //			}
 			var panel:Panel = new Panel();
 			panel.vScrollBarSkin = "png.comp.vscroll";
-			panel.width = 800;
+			panel.width = 793;
 			panel.height = 468;
-			panel.y = 7;
 			panel.vScrollBar.showButtons = false;
 			panel.vScrollBar.autoHide = true;
 			this.addChild(panel);
