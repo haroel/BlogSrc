@@ -18,6 +18,7 @@ package com.haroel.ui
 		
 		public function MAbilityView()
 		{
+			App.log.debug("MAbilityView()");
 			super();
 		}
 		override protected function createChildren():void
@@ -34,7 +35,8 @@ package com.haroel.ui
 			var panel:Panel = new Panel();
 			panel.vScrollBarSkin = "png.comp.vscroll";
 			panel.width = 800;
-			panel.height = 480;
+			panel.height = 468;
+			panel.y = 7;
 			panel.vScrollBar.showButtons = false;
 			panel.vScrollBar.autoHide = true;
 			this.addChild(panel);
