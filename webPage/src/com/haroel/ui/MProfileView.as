@@ -30,7 +30,7 @@ package com.haroel.ui
 		{
 			var contentXml:XML = new XML(content);
 			createView(contentXml);
-			m_avatar.visible = false;
+			this.visible = false;
 			m_collBtn.addEventListener(MouseEvent.CLICK,clickHandler);
 			m_avatar.addEventListener(UIEvent.IMAGE_LOADED,imgLoadedHandler);
 		}
@@ -55,7 +55,7 @@ package com.haroel.ui
 				m_avatar.filters = [new BlurFilter(20,20)];
 				TweenMax.to(m_avatar, 0.5, {blurFilter:{blurX:0,blurY:0}});
 				
-				m_avatar.visible = true;
+				this.visible = true;
 			}
 		}
 		 override public function remove():void

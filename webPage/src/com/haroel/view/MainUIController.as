@@ -102,6 +102,7 @@ package com.haroel.view
 						itemNode.setState(IconItemRenderer.UNSELECTED);
 					}
 				}
+				_popUpController.openPanel(selectedId);
 			}
 		}
 		
