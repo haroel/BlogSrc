@@ -35,6 +35,8 @@ package com.haroel.ui
 			panel.vScrollBarSkin = "png.comp.vscroll";
 			panel.width = 800;
 			panel.height = 480;
+			panel.vScrollBar.showButtons = false;
+			panel.vScrollBar.autoHide = true;
 			this.addChild(panel);
 			var cls:Class = App.asset.getClass("SkillShowView");
 			
