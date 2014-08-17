@@ -1,0 +1,4 @@
+<View width="800" height="1500" sceneColor="0xffffff" layers="1,1,0,0,第 1 层">
+  <Image skin="png.comp.img_cocos" x="8" y="473" layer="1"/>
+  <Label text="熟悉Cocos2d-x引擎，了解引擎运行机制以及相关开发工具的使用。两年Cocos2d-x开发经验，有完整的cocos2d-x上线项目运行技术维护经验。熟悉c/c++语言，了解常用c++库使用。掌握lua开发移动游戏流程" styleSkin="png.comp.label" x="275" y="521" layer="1" multiline="true" wordWrap="true" width="398" height="87"/>
+</View>
