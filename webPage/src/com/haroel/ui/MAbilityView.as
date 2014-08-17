@@ -7,6 +7,7 @@ package com.haroel.ui
 	import flash.display.MovieClip;
 	import flash.text.TextField;
 	
+	import morn.core.components.Panel;
 	import morn.core.components.View;
 	import morn.core.handlers.Handler;
 
@@ -21,14 +22,23 @@ package com.haroel.ui
 		}
 		override protected function createChildren():void
 		{		
-			if (skillDataArray.length < 1)
-			{
-				App.loader.loadTXT("uiXml/pskill.xml",new Handler(onComplete));
-			}
-			else
-			{
-				
-			}
+//			if (skillDataArray.length < 1)
+//			{
+//				App.loader.loadTXT("uiXml/pskill.xml",new Handler(onComplete));
+//			}
+//			else
+//			{
+//				
+//			}
+			
+			var panel:Panel = new Panel();
+			panel.vScrollBarSkin = "png.comp.vscroll";
+			panel.width = 800;
+			panel.height = 480;
+			this.addChild(panel);
+			var cls:Class = App.asset.getClass("SkillShowView");
+			
+			panel.addChild(new cls());
 		}
 		private function onComplete(content:String):void
 		{
