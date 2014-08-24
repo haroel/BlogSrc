@@ -15,7 +15,7 @@ package com.haroel.ui
 
 	public class MProfileView extends View
 	{
-		public var m_collBtn:LinkButton;
+//		public var m_collBtn:LinkButton;
 		public var m_avatar:Image;
 		
 		public function MProfileView()
@@ -31,7 +31,7 @@ package com.haroel.ui
 			var contentXml:XML = new XML(content);
 			createView(contentXml);
 			this.visible = false;
-			m_collBtn.addEventListener(MouseEvent.CLICK,clickHandler);
+//			m_collBtn.addEventListener(MouseEvent.CLICK,clickHandler);
 			m_avatar.addEventListener(UIEvent.IMAGE_LOADED,imgLoadedHandler);
 		}
 		private function clickHandler(evt:MouseEvent):void
@@ -60,7 +60,7 @@ package com.haroel.ui
 		}
 		 override public function remove():void
 		 {
-			 m_collBtn.removeEventListener(MouseEvent.CLICK,clickHandler);
+//			 m_collBtn.removeEventListener(MouseEvent.CLICK,clickHandler);
 			 m_avatar.removeEventListener(UIEvent.IMAGE_LOADED,imgLoadedHandler);
 			 super.remove();
 		 }
