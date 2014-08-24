@@ -33,17 +33,20 @@ package com.haroel.ui
 //			}
 			var panel:Panel = new Panel();
 			panel.vScrollBarSkin = "png.comp.vscroll";
-			panel.width = 793;
-			panel.height = 468;
+			panel.width = 820;
+			panel.height = 470;
 			panel.vScrollBar.showButtons = false;
-			panel.vScrollBar.autoHide = true;
+//			panel.vScrollBar.autoHide = true;
 			this.addChild(panel);
 			var cls:Class = App.asset.getClass("SkillShowView");
 			panel.visible = false;
 			panel.addChild(new cls());
+			panel.vScrollBar.visible = false;
+
 			App.render.callLater(delayFunc);
 			function delayFunc():void
 			{
+				panel.vScrollBar.visible = false;
 				panel.visible = true;
 			}
 		}

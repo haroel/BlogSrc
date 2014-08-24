@@ -53,7 +53,7 @@ package com.haroel.view
 		public function playMoveInAction():void
 		{
 			_isInAnimation = true;
-			TweenLite.to(_material, 0.5, {y:0, motionBlur:true, ease:Cubic.easeInOut,onComplete:moveInCompleteHandler});
+			TweenLite.to(_material, 0.5, {y:5, motionBlur:true, ease:Cubic.easeInOut,onComplete:moveInCompleteHandler});
 		}
 		
 		public function playMoveOutAction():void
@@ -96,7 +96,7 @@ package com.haroel.view
 					container.addChild(new MProfileView());
 					break;
 				}
-				case 2:
+				case 4:
 				{
 					container.addChild(new MAbilityView());
 					break;

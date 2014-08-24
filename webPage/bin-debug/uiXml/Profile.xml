@@ -16,7 +16,7 @@
   <Label text="职业" styleSkin="png.comp.label" x="51" y="194" layer="1" bold="true" color="0x333333" width="56" height="19"/>
   <Label text="固定工作者" styleSkin="png.comp.label" x="130" y="195" layer="1" size="16" selectable="true"/>
   <Label text="学历" styleSkin="png.comp.label" x="319" y="195" layer="1" bold="true" color="0x333333" width="56" height="19"/>
-  <Label text="本科" styleSkin="png.comp.label" x="407" y="196" layer="1" size="16" selectable="true" toolTip="信息管理于信息系统"/>
+  <Label text="本科" styleSkin="png.comp.label" x="407" y="196" layer="1" size="16" selectable="true" toolTip="信息管理与信息系统"/>
   <Label text="婚姻状态" styleSkin="png.comp.label" x="316" y="154" layer="1" bold="true" color="0x333333" width="66" height="19"/>
   <Label text="已婚" styleSkin="png.comp.label" x="407" y="154" layer="1" size="16" selectable="true"/>
   <Label text="星座" styleSkin="png.comp.label" x="316" y="117" layer="1" bold="true" color="0x333333" width="66" height="19"/>
