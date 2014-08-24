@@ -1,9 +1,11 @@
 package com.haroel.view
 {
+	import com.greensock.TweenLite;
 	import com.greensock.TweenMax;
 	import com.greensock.easing.Bounce;
 	
 	import flash.events.Event;
+	import flash.text.TextField;
 	
 	import morn.core.handlers.Handler;
 	
@@ -39,7 +41,8 @@ package com.haroel.view
 		public function removeLoader(removeHandler:Handler = null):void
 		{
 			this._removeHandler = removeHandler;
-			TweenMax.to(this, 0.3, {alpha:0.1, ease:Bounce.easeInOut, onComplete:removeNode});
+//			(TextField)(this.m_label).text
+			TweenLite.to(this, 0.3, {alpha:0.1,delay:0.5, ease:Bounce.easeInOut, onComplete:removeNode});
 		}
 		private function removeNode():void
 		{
