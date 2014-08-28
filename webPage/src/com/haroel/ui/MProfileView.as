@@ -1,13 +1,14 @@
 package com.haroel.ui
 {
-	import com.greensock.*; 
-	import com.greensock.easing.*;	
+	import com.greensock.TweenMax;
+	
 	import flash.events.MouseEvent;
 	import flash.filters.BlurFilter;
 	import flash.net.URLRequest;
 	import flash.net.navigateToURL;
 	
 	import morn.core.components.Image;
+	import morn.core.components.Label;
 	import morn.core.components.LinkButton;
 	import morn.core.components.View;
 	import morn.core.events.UIEvent;
@@ -17,7 +18,11 @@ package com.haroel.ui
 	{
 //		public var m_collBtn:LinkButton;
 		public var m_avatar:Image;
-		
+		public var m_weiboLabel:Label;
+		public var m_emailBtn:LinkButton;
+		public var m_wxBtn:LinkButton;
+		public var m_cnBtn:LinkButton;
+
 		public function MProfileView()
 		{
 			super();
@@ -31,22 +36,51 @@ package com.haroel.ui
 			var contentXml:XML = new XML(content);
 			createView(contentXml);
 			this.visible = false;
-//			m_collBtn.addEventListener(MouseEvent.CLICK,clickHandler);
 			m_avatar.addEventListener(UIEvent.IMAGE_LOADED,imgLoadedHandler);
-		}
-		private function clickHandler(evt:MouseEvent):void
-		{
-			var url:String = "http://www.wust.edu.cn";
-			var request:URLRequest = new URLRequest(url);
-			try
+			
+			m_emailBtn.clickHandler = new Handler(linkClickHandler,[1]);
+			m_wxBtn.clickHandler = new Handler(linkClickHandler,[2]);
+			m_cnBtn.clickHandler = new Handler(linkClickHandler,[3]);
+			
+			function linkClickHandler(tag:int):void
 			{
-				navigateToURL(request, '_blank');
-			}
-			catch(e:Error)
-			{
-				trace("Error occurred!");
+				switch(tag)
+				{
+					case 1://邮件
+					{
+						try
+						{
+							navigateToURL(new URLRequest("mailto:" + m_emailBtn.label), '_self');
+						}
+						catch(e:Error)
+						{
+							trace("Error occurred!");
+						}
+						break;
+					}
+					case 2://微信
+					{
+						
+						break;
+					}
+					case 3://cnblog
+					{
+						try
+						{
+							navigateToURL(new URLRequest(m_cnBtn.label), '_blank');
+						}
+						catch(e:Error)
+						{
+							trace("Error occurred!");
+						}
+						break;
+					}
+					default:
+						break;
+				}
 			}
 		}
+
 		private function imgLoadedHandler(evt:UIEvent):void
 		{
 			if (m_avatar.bitmapData)
