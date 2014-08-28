@@ -17,7 +17,7 @@ package
 	import morn.core.handlers.Handler;
 	import morn.core.managers.ResLoader;
 	
-	[SWF(width="1000",height="600",frameRate="24",backgroundColor="#ffffff")]
+	[SWF(width="1000",height="600",frameRate="24",backgroundColor="#ffffff",title="ihowe")]
 	
 	public class Main extends Sprite
 	{
