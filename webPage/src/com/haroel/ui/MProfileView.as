@@ -129,10 +129,7 @@ package com.haroel.ui
 
 		private function imgLoadedHandler(evt:UIEvent):void
 		{
-			if (m_avatar.bitmapData)
-			{				
-				this.visible = true;
-			}
+			this.visible = true;
 		}
 		 override public function remove():void
 		 {
