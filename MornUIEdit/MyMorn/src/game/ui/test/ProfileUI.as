@@ -40,12 +40,12 @@ package game.ui.test {
 			  <Label text="轻强迫症" x="519" y="406" autoSize="left" background="false" width="82" height="26" skin="png.comp.label_tag" align="center" sizeGrid="1,1,24,4" color="0xffffff" bold="false" size="14" font="Arial" letterSpacing="1" margin="1,3,9,1"/>
 			  <Label text="微博" x="40" y="293" bold="true" color="0x333333" width="37" height="20"/>
 			  <Label text="邮件" x="40" y="327" bold="true" color="0x333333" width="34" height="22"/>
-			  <LinkButton label="ihowe@outlook.com" x="89" y="326" var="m_emailBtn"/>
+			  <LinkButton label="ihowe@outlook.com" x="89" y="326" var="m_emailBtn" labelSize="14" buttonMode="true"/>
 			  <Label text="微信" x="39" y="359" bold="true" color="0x333333" width="35" height="21"/>
-			  <Label text="一个游戏前端程序员，目前就职于上海墨白科技" x="41" y="257" bold="true" color="0x333333" width="322" height="20"/>
-			  <Label text="howe_wh" x="90" y="292" width="57" height="20" color="0x333333" buttonMode="true" var="m_weiboLabel" backgroundColor="0x333333" toolTip="新浪微博"/>
-			  <Image skin="png.comp.img_v" x="147" y="293"/>
-			  <LinkButton label="howe_wh" x="88" y="360" var="m_wxBtn"/>
+			  <Label text="一个游戏前端程序员，目前就职于上海墨白科技" x="36" y="252" bold="true" color="0x333333" width="419" height="20" size="15"/>
+			  <Label text="howe_wh" x="90" y="292" width="68" height="20" color="0x333333" buttonMode="true" var="m_weiboLabel" backgroundColor="0x333333" size="14" mouseChildren="false"/>
+			  <Image skin="png.comp.img_v" x="149" y="293"/>
+			  <LinkButton label="howe_wh" x="89" y="360" var="m_wxBtn" labelSize="14" buttonMode="true"/>
 			</View>;
 		public function ProfileUI(){}
 		override protected function createChildren():void {
