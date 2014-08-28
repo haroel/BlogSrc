@@ -31,7 +31,7 @@ package com.haroel.view
 			_material = new cls();
 			container = (MovieClip)(_material.m_container);
 			_material.x = (Main.stageWidth - _material.width)/2;
-			_material.y = -_material.height;
+			_material.y = -_material.height - 30;
 			_material.addEventListener(Event.REMOVED_FROM_STAGE,removeHandler);
 //			_material.blendShader
 			function removeHandler(evt:Event):void

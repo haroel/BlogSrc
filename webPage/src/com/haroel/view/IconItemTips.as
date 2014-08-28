@@ -43,7 +43,7 @@ package com.haroel.view
 			var h:Number = 22;
 			
 			this.graphics.clear();
-			this.graphics.beginFill(0x000000,0.3);
+			this.graphics.beginFill(0x000000,0.5);
 			this.graphics.drawRoundRect(-w/2,-h/2,w,h,h,h);
 			
 			this.graphics.moveTo(-6,h/2);
