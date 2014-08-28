@@ -9,7 +9,8 @@ package game.ui.test {
 		public var m_cnBtn:LinkButton;
 		protected static var uiXML:XML =
 			<View width="800" height="480">
-			  <Image x="602" y="19" width="165" height="178" var="m_avatar" smoothing="true" url="http://haroel.github.io/blog/fl/img/avatar.png" toolTip="真人更帅"/>
+			  <Image skin="png.comp.blank" x="573" y="42" width="190" height="190" alpha="0.2"/>
+			  <Image x="578" y="47" width="180" height="180" var="m_avatar" smoothing="true" url="http://haroel.github.io/blog/fl/img/avatar.jpg" toolTip="真人更帅"/>
 			  <Label text="何浩" x="117" y="36" size="16" selectable="true" width="65" height="24" buttonMode="false" underline="false" toolTip="英文昵称howe"/>
 			  <Label text="所在地" x="302" y="72" bold="true" color="0x333333" width="68" height="23"/>
 			  <Label text="出生日期" x="39" y="153" bold="true" color="0x333333" width="66" height="19"/>
