@@ -13,6 +13,8 @@ package com.haroel.model
 		public static var VERSION:String = "";
 		public static var DEBUG_MODE:Boolean = false;
 		
+		public static var RSS_URL:String = "";
+		
 		public function ModelLocator(innerCls:InnerCls)
 		{
 			if (innerCls == null)
@@ -88,6 +90,7 @@ package com.haroel.model
 				obj.enabled = (Boolean)(xml2.@enabled == "true");
 				rightMenuLabels.push(obj);
 			}
+			RSS_URL = configXML.rss.@url;
 			App.log.debug("gamesetting解析完成");
 
 		}

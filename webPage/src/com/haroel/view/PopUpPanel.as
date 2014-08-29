@@ -7,6 +7,7 @@ package com.haroel.view
 	import com.haroel.model.MenuItemVO;
 	import com.haroel.ui.MAbilityView;
 	import com.haroel.ui.MProfileView;
+	import com.haroel.ui.MRssView;
 	
 	import flash.display.MovieClip;
 	import flash.events.Event;
@@ -99,6 +100,11 @@ package com.haroel.view
 				case 4:
 				{
 					container.addChild(new MAbilityView());
+					break;
+				}
+				case 6:
+				{
+					container.addChild(new MRssView());
 					break;
 				}
 				default:
