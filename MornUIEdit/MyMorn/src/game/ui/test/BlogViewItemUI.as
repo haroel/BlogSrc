@@ -12,15 +12,15 @@ package game.ui.test {
 		protected static var uiXML:XML =
 			<View width="780" height="90">
 			  <Image skin="png.comp.img_blogview_bg" x="0" y="0" sizeGrid="5,5,10,20" width="779" height="91" var="m_bg" visible="false"/>
-			  <Label x="1" y="1" width="76" height="22" size="16" bold="true" autoSize="left" var="titleLabel" text="标题"/>
-			  <Label text="libcurl发送post请求，包括httpheader参数static size_t getCharCode(void *ptr, size_t size, size_t nmemb, void *userdata){ string *version = (string*)userdata;... (查看全文)" x="9" y="27" multiline="true" wordWrap="true" width="757" height="42" autoSize="left" indent="20" isHtml="true" leading="5" letterSpacing="0.5" mouseEnabled="false" mouseChildren="true" var="desLabel"/>
+			  <Label x="1" y="1" width="76" height="22" size="16" bold="true" autoSize="left" var="titleLabel"/>
+			  <Label x="9" y="27" multiline="true" wordWrap="true" width="757" height="42" autoSize="left" indent="20" isHtml="true" leading="5" letterSpacing="0.5" mouseEnabled="false" mouseChildren="true" var="desLabel"/>
 			  <Image skin="png.comp.img_ref" x="595" y="61" alpha="0.8"/>
 			  <Image skin="png.comp.img_commit" x="652" y="63" alpha="0.5"/>
 			  <Image skin="png.comp.img_read" x="705" y="64" alpha="0.5"/>
-			  <Label text="11" x="614" y="60" var="m_refLabel"/>
-			  <Label text="11" x="670" y="60" var="m_comLabel"/>
-			  <Label text="11" x="725" y="60" var="m_readLabel"/>
-			  <Label text="posted @ 2014-08-21" x="424" y="62" width="156" height="22" var="dataLabel"/>
+			  <Label x="614" y="60" var="m_refLabel"/>
+			  <Label x="670" y="60" var="m_comLabel"/>
+			  <Label x="725" y="60" var="m_readLabel"/>
+			  <Label x="424" y="62" width="156" height="22" var="dataLabel"/>
 			</View>;
 		public function BlogViewItemUI(){}
 		override protected function createChildren():void {
