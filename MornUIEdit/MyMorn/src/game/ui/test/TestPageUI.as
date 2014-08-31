@@ -11,7 +11,7 @@ package game.ui.test {
 			  <HSlider skin="png.comp.hslider" x="45" y="97" width="120"/>
 			  <RadioGroup labels="label1,label2" skin="png.comp.radiogroup" x="45" y="224"/>
 			  <TextInput text="TextInput" skin="png.comp.textinput" x="45" y="258" margin="1,1,1,1" sizeGrid="2,2,2,2" width="150"/>
-			  <Button label="label" skin="png.comp.button" x="45" y="178"/>
+			  <Button label="label" skin="png.comp.button" x="45" y="178" stateNum="3"/>
 			  <LinkButton label="linkButton" x="146" y="179"/>
 			  <ProgressBar skin="png.comp.progress" x="45" y="135" width="114" height="14" sizeGrid="4,4,4,4"/>
 			  <Tab labels="Tab1,Tab2" skin="png.comp.tab" x="251" y="280" selectedIndex="0"/>

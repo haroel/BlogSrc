@@ -1,4 +1,4 @@
-<Dialog sceneColor="0xffffff" layers="2,1,0,0,body;1,1,0,1,bg" width="600" height="400">
+<Dialog sceneColor="0xffffff" layers="2,1,1,0,body;1,1,1,0,bg" width="600" height="400">
   <Image skin="png.comp.bg" x="0" y="0" layer="1" sizeGrid="4,30,4,4" width="600" height="400"/>
   <Button skin="png.comp.btn_close" x="563" y="3" layer="1" name="close"/>
   <CheckBox label="label" skin="png.comp.checkbox" x="169" y="224" layer="2"/>
@@ -6,7 +6,7 @@
   <HSlider skin="png.comp.hslider" x="45" y="97" layer="2" width="120"/>
   <RadioGroup labels="label1,label2" skin="png.comp.radiogroup" x="45" y="224" layer="2"/>
   <TextInput text="TextInput" skin="png.comp.textinput" x="45" y="258" layer="2" margin="1,1,1,1" sizeGrid="2,2,2,2" width="150"/>
-  <Button label="label" skin="png.comp.button" x="45" y="178" layer="2"/>
+  <Button label="label" skin="png.comp.button" x="45" y="178" layer="2" stateNum="3"/>
   <LinkButton label="linkButton" styleSkin="png.comp.linkbutton" x="146" y="179" layer="2"/>
   <ProgressBar skin="png.comp.progress" x="45" y="135" layer="2" width="114" height="14" sizeGrid="4,4,4,4"/>
   <Tab labels="Tab1,Tab2" skin="png.comp.tab" x="251" y="280" layer="2" selectedIndex="0"/>
