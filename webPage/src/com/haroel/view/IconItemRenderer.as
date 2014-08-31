@@ -16,6 +16,10 @@ package com.haroel.view
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.filters.BitmapFilterQuality;
+	import flash.filters.BitmapFilterType;
+	import flash.filters.DropShadowFilter;
+	import flash.filters.GradientGlowFilter;
 	import flash.geom.Matrix;
 	import flash.geom.Point;
 	import flash.text.TextField;
@@ -95,6 +99,8 @@ package com.haroel.view
 					_material.removeEventListener(MouseEvent.CLICK,mouseHandler);
 					_material.removeEventListener(MouseEvent.ROLL_OUT,mouseHandler);
 					_material.removeEventListener(MouseEvent.ROLL_OVER,mouseHandler);
+					(MovieClip)(_material.m_iconMC).getChildByName("icon").filters = [];
+					
 					break;
 				}
 				case SELECTED:
@@ -111,7 +117,13 @@ package com.haroel.view
 					_material.removeEventListener(MouseEvent.CLICK,mouseHandler);
 					_material.addEventListener(MouseEvent.ROLL_OUT,mouseHandler);
 					_material.addEventListener(MouseEvent.ROLL_OVER,mouseHandler);
-
+//	new BitmapFilterType
+					var icon:DisplayObject = (MovieClip)(_material.m_iconMC).getChildByName("icon");
+					if (icon.filters.length < 1)
+					{
+						var f1:DropShadowFilter = new DropShadowFilter(4,90,0,0.4,3,7);
+						icon.filters = [f1];
+					}
 					break;
 				}
 				case UNSELECTED:
@@ -123,6 +135,12 @@ package com.haroel.view
 					_material.addEventListener(MouseEvent.CLICK,mouseHandler);
 					_material.addEventListener(MouseEvent.ROLL_OUT,mouseHandler);
 					_material.addEventListener(MouseEvent.ROLL_OVER,mouseHandler);
+					var icon:DisplayObject = (MovieClip)(_material.m_iconMC).getChildByName("icon");
+					if (icon.filters.length < 1)
+					{
+						var f1:DropShadowFilter = new DropShadowFilter(4,90,0,0.4,11,11);
+						icon.filters = [f1];
+					}
 					break;
 				}
 				default:
