@@ -1,0 +1,7 @@
+<View width="800" height="480" sceneColor="0xffffff" layers="1,1,0,0,第 1 层">
+  <Button skin="png.comp.btn_arrow_left" x="319" y="453" layer="1" stateNum="1" var="btn_left"  buttonMode="true"/>
+  <Button skin="png.comp.btn_refresh" x="364" y="450" layer="1" stateNum="1" var="btn_refresh"  buttonMode="true"/>
+  <Button skin="png.comp.btn_arrow_right" x="409" y="453" layer="1" stateNum="1" var="btn_right"  buttonMode="true"/>
+  <Panel layers="1,1,0,0,第 1 层" layer="1" x="3" y="4" width="793" height="440" vScrollBarSkin="png.comp.vscroll" var="m_panel"/>
+  <LinkButton label="内容来自我的cnblogs" styleSkin="png.comp.linkbutton" x="676" y="456" layer="1" var="m_linkBtn"  buttonMode="true"/>
+</View>

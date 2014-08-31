@@ -6,8 +6,8 @@ package com.haroel.view
 	import com.haroel.events.UIEventDispatcher;
 	import com.haroel.model.MenuItemVO;
 	import com.haroel.ui.MAbilityView;
+	import com.haroel.ui.MBlogView;
 	import com.haroel.ui.MProfileView;
-	import com.haroel.ui.MRssView;
 	
 	import flash.display.MovieClip;
 	import flash.events.Event;
@@ -104,7 +104,7 @@ package com.haroel.view
 				}
 				case 6:
 				{
-					container.addChild(new MRssView());
+					container.addChild(new MBlogView());
 					break;
 				}
 				default:

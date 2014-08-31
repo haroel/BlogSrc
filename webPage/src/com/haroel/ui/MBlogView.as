@@ -38,7 +38,7 @@ package com.haroel.ui
 			
 			function funcClick(tag:int):void
 			{
-				switch tag
+				switch (tag)
 				{
 					case 1:
 					{
