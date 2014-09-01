@@ -84,6 +84,7 @@ package com.haroel.ui
 			if (m_bg)
 			{
 				this.titleLabel.text = _data.title;	
+				this.desLabel.text = _data.summary;
 				this.m_refLabel.text = _data.diggs.toString();
 				this.m_readLabel.text = _data.views.toString();
 				this.m_comLabel.text = _data.comments.toString();

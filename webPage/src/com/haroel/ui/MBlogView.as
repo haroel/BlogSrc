@@ -4,6 +4,7 @@ package com.haroel.ui
 	import com.haroel.util.Hash;
 	
 	import morn.core.components.Button;
+	import morn.core.components.Label;
 	import morn.core.components.LinkButton;
 	import morn.core.components.Panel;
 	import morn.core.components.View;
@@ -14,8 +15,8 @@ package com.haroel.ui
 		public var m_panel:Panel;
 		public var btn_left:Button;
 		public var btn_right:Button;
-		public var btn_refresh:Button;
 		public var m_linkBtn:LinkButton;
+		public var m_pageLabel:Label;
 		
 		public var _currentPageIndex:int = -1;
 		
@@ -39,7 +40,6 @@ package com.haroel.ui
 			
 			this.pageIndex = 1;
 			btn_left.clickHandler = new Handler(funcClick,[1]);
-			btn_refresh.clickHandler = new Handler(funcClick,[2]);
 			btn_right.clickHandler = new Handler(funcClick,[3]);
 			m_linkBtn.clickHandler = new Handler(funcClick,[4]);
 			
@@ -53,11 +53,7 @@ package com.haroel.ui
 						
 						break;
 					}
-					case 2:
-					{
-						
-						break;
-					}
+
 					case 3:
 					{
 						
@@ -84,6 +80,8 @@ package com.haroel.ui
 		}
 		private function callBackFuc(...data):void
 		{
+			m_pageLabel.text = _currentPageIndex.toString();
+			
 			var l:int = data.length;
 			for (var i:int = 0;i < l;i++)
 			{
