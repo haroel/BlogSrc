@@ -1,7 +1,10 @@
 <lib>
   <bitmapdata class="png.comp.bg" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\bg.png" compression="false" quality="80" create="1409137580376473"/>
   <bitmapdata class="png.comp.blank" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\blank.png" compression="false" quality="80" create="1409137580376933"/>
+  <bitmapdata class="png.comp.btn_arrow_left" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\btn_arrow_left.png" compression="false" quality="80" create="14095369581541553"/>
+  <bitmapdata class="png.comp.btn_arrow_right" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\btn_arrow_right.png" compression="false" quality="80" create="14095369793741537"/>
   <bitmapdata class="png.comp.btn_close" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\btn_close.png" compression="false" quality="80" create="1409137580377938"/>
+  <bitmapdata class="png.comp.btn_refresh" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\btn_refresh.png" compression="false" quality="80" create="14095366292851530"/>
   <bitmapdata class="png.comp.button" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\button.png" compression="false" quality="80" create="1409137580377846"/>
   <bitmapdata class="png.comp.checkbox" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\checkbox.png" compression="false" quality="80" create="1409137580377351"/>
   <bitmapdata class="png.comp.clip_num" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\clip_num.png" compression="false" quality="80" create="14091375803787364"/>
@@ -15,11 +18,15 @@
   <bitmapdata class="png.comp.hscroll" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\hscroll.png" compression="false" quality="80" create="14091375803801131"/>
   <bitmapdata class="png.comp.hslider$bar" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\hslider$bar.png" compression="false" quality="80" create="14091375803811248"/>
   <bitmapdata class="png.comp.hslider" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\hslider.png" compression="false" quality="80" create="14091375803812913"/>
+  <bitmapdata class="png.comp.img_blogview_bg" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\img_blogview_bg.png" compression="false" quality="80" create="14095346937381777"/>
+  <bitmapdata class="png.comp.img_commit" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\img_commit.png" compression="false" quality="80" create="14095346937391115"/>
   <bitmapdata class="png.comp.img_line" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\img_line.png" compression="false" quality="80" create="1409137580381952"/>
+  <bitmapdata class="png.comp.img_read" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\img_read.png" compression="false" quality="80" create="14095346937391168"/>
+  <bitmapdata class="png.comp.img_ref" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\img_ref.png" compression="false" quality="80" create="14095346937401477"/>
   <bitmapdata class="png.comp.img_v" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\img_v.png" compression="false" quality="80" create="14091989656771391"/>
   <bitmapdata class="png.comp.img_wx" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\img_wx.png" compression="false" quality="80" create="14092032148402912"/>
   <bitmapdata class="png.comp.label" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\label.png" compression="false" quality="80" create="14091375803822909"/>
-  <bitmapdata class="png.comp.label_tag" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\label_tag.png" compression="false" quality="80" create="14092038009801763"/>
+  <bitmapdata class="png.comp.label_tag" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\label_tag.png" compression="false" quality="80" create="14095346937531533"/>
   <bitmapdata class="png.comp.linkbutton" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\linkbutton.png" compression="false" quality="80" create="14091375803822909"/>
   <bitmapdata class="png.comp.progress$bar" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\progress$bar.png" compression="false" quality="80" create="1409137580383303"/>
   <bitmapdata class="png.comp.progress" file="E:\github_haroel\BlogSrc\MornUIEdit\MyMorn\morn\assets\comp\progress.png" compression="false" quality="80" create="1409137580383280"/>

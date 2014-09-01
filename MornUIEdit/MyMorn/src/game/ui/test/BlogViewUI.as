@@ -9,10 +9,10 @@ package game.ui.test {
 		public var m_linkBtn:LinkButton;
 		protected static var uiXML:XML =
 			<View width="800" height="480">
-			  <Button skin="png.comp.btn_arrow_left" x="319" y="446" stateNum="1" var="btn_left" scaleX="0.8" scaleY="0.8"/>
-			  <Button skin="png.comp.btn_refresh" x="364" y="442" stateNum="1" var="btn_refresh"/>
-			  <Button skin="png.comp.btn_arrow_right" x="424" y="448" stateNum="1" var="btn_right" scaleX="0.8" scaleY="0.8"/>
-			  <Panel x="3" y="1" width="793" height="440" vScrollBarSkin="png.comp.vscroll" var="m_panel"/>
+			  <Button skin="png.comp.btn_arrow_left" x="371" y="458" stateNum="3" var="btn_left"/>
+			  <Button skin="png.comp.btn_refresh" x="399" y="459" stateNum="1" var="btn_refresh"/>
+			  <Button skin="png.comp.btn_arrow_right" x="424" y="458" stateNum="3" var="btn_right"/>
+			  <Panel x="3" y="1" width="794" height="452" vScrollBarSkin="png.comp.vscroll" var="m_panel"/>
 			  <LinkButton label="内容来自我的cnblogs" x="676" y="453" var="m_linkBtn" buttonMode="true"/>
 			</View>;
 		public function BlogViewUI(){}
