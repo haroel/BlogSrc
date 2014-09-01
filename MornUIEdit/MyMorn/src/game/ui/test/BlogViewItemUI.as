@@ -20,7 +20,7 @@ package game.ui.test {
 			  <Label x="648" y="62" var="m_refLabel" width="34" height="18" autoSize="left" text="11"/>
 			  <Label x="700" y="62" var="m_comLabel" width="30" height="18" text="11" autoSize="left"/>
 			  <Label x="748" y="62" var="m_readLabel" width="33" height="18" text="999"/>
-			  <Label x="376" y="58" width="253" height="22" var="dataLabel" autoSize="right"/>
+			  <Label x="501" y="62" width="128" height="18" var="dataLabel" autoSize="left" text="posted @ 2014-8-22"/>
 			</View>;
 		public function BlogViewItemUI(){}
 		override protected function createChildren():void {

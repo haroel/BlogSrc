@@ -8,5 +8,5 @@
   <Label styleSkin="png.comp.label" x="648" y="62" layer="1" var="m_refLabel" width="34" height="18" autoSize="left" text="11"/>
   <Label styleSkin="png.comp.label" x="700" y="62" layer="1" var="m_comLabel" width="30" height="18" text="11" autoSize="left"/>
   <Label styleSkin="png.comp.label" x="748" y="62" layer="1" var="m_readLabel" width="33" height="18" text="999"/>
-  <Label styleSkin="png.comp.label" x="376" y="58" layer="1" width="253" height="22" var="dataLabel" autoSize="right"/>
+  <Label styleSkin="png.comp.label" x="501" y="62" layer="1" width="128" height="18" var="dataLabel" autoSize="left" text="posted @ 2014-8-22"/>
 </View>
