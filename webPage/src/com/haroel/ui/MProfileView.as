@@ -1,11 +1,9 @@
 package com.haroel.ui
 {
-	import com.greensock.TweenMax;
 	import com.haroel.view.PopTipManager;
 	
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
-	import flash.filters.BlurFilter;
 	import flash.geom.Point;
 	import flash.net.URLRequest;
 	import flash.net.navigateToURL;
