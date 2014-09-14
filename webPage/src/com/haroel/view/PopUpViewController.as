@@ -25,7 +25,7 @@ package com.haroel.view
 				_panel	= new PopUpPanel();
 				this._popUpLayer.addChild(_panel.material);
 			}
-			_panel.info = ModelLocator.getInstance().getMenuItemVOById(value);
+			_panel.info = value;
 		}
 		public function playMoveIn():void
 		{

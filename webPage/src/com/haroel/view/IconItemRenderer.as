@@ -16,13 +16,9 @@ package com.haroel.view
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
-	import flash.filters.BitmapFilterQuality;
-	import flash.filters.BitmapFilterType;
 	import flash.filters.DropShadowFilter;
-	import flash.filters.GradientGlowFilter;
 	import flash.geom.Matrix;
 	import flash.geom.Point;
-	import flash.text.TextField;
 	
 	
 	public class IconItemRenderer extends Sprite
@@ -135,11 +131,11 @@ package com.haroel.view
 					_material.addEventListener(MouseEvent.CLICK,mouseHandler);
 					_material.addEventListener(MouseEvent.ROLL_OUT,mouseHandler);
 					_material.addEventListener(MouseEvent.ROLL_OVER,mouseHandler);
-					var icon:DisplayObject = (MovieClip)(_material.m_iconMC).getChildByName("icon");
-					if (icon.filters.length < 1)
+					var icon1:DisplayObject = (MovieClip)(_material.m_iconMC).getChildByName("icon");
+					if (icon1.filters.length < 1)
 					{
-						var f1:DropShadowFilter = new DropShadowFilter(4,90,0,0.4,11,11);
-						icon.filters = [f1];
+						var f2:DropShadowFilter = new DropShadowFilter(4,90,0,0.4,11,11);
+						icon1.filters = [f2];
 					}
 					break;
 				}

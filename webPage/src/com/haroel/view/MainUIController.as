@@ -164,7 +164,8 @@ package com.haroel.view
 				iconItem.x = animatePoint.x;
 				iconItem.y = animatePoint.y;
 				_animaterLayer.addChild(iconItem);
-				
+//				TweenLite.to(iconItem,0.5,{x:animatePoint.x - 20,y:animatePoint.y - 20});
+					
 				_dockItemHash.addItem(iconItem.id,iconItem);
 				metroItem.removeNode();
 			}		
@@ -195,8 +196,14 @@ package com.haroel.view
 					{
 						iconItemC.setState(IconItemRenderer.UNSELECTED);
 					}
-					TweenLite.to(iconItemC,0.7,{x:135 + iconItemC.width/2 + i * (iconItemC.width + gap),
-						y:Main.stageHeight - iconItemC.height/2 - 4});
+					
+//					TweenMax.to(this, 1.5, {delay:d,ease:Back.easeInOut,x:p.x, y:p.y});
+					//			TweenMax.to(this, 1, {delay:d,ease:Back.easeInOut,bezier:{autoRotate:false, values:[{x:p.x, y:p.y}]}});
+
+//					TweenMax.to(iconItemC,0.7,{x:135 + iconItemC.width/2 + i * (iconItemC.width + gap),
+//						y:Main.stageHeight - iconItemC.height/2 - 4});
+					TweenMax.to(iconItemC, 0.6, {bezier:{autoRotate:false,
+						values:[{x:135 + iconItemC.width/2 + i * (iconItemC.width + gap), y:Main.stageHeight - iconItemC.height/2 - 4}]}});
 				}
 			}
 		}

@@ -5,10 +5,13 @@ package com.haroel.view
 	import com.haroel.events.DDEvent;
 	import com.haroel.events.UIEventDispatcher;
 	import com.haroel.model.MenuItemVO;
+	import com.haroel.ui.IMView;
 	import com.haroel.ui.MAbilityView;
 	import com.haroel.ui.MBlogView;
+	import com.haroel.ui.MHelpView;
 	import com.haroel.ui.MProfileView;
 	
+	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
 	import flash.events.Event;
 
@@ -47,8 +50,8 @@ package com.haroel.view
 		private function moveInCompleteHandler():void
 		{
 			_isInAnimation = false;
-			
-			this.setView();
+			this.info = _currentId;
+//			this.setView();
 		}
 		
 		public function playMoveInAction():void
@@ -68,13 +71,13 @@ package com.haroel.view
 			}
 		}
 		
-		public function set info(value:MenuItemVO):void
+		public function set info(value:int):void
 		{
-			if (_currentId == value.id)
+			if (_currentId == value)
 			{
 				return;
 			}
-			_currentId = value.id;
+			_currentId = value;
 			if(_isInAnimation)
 			{
 				return;
@@ -86,30 +89,36 @@ package com.haroel.view
 		}
 		private　function setView():void
 		{
-			while(container.numChildren > 0)
+			if (container.numChildren > 0)
 			{
-				container.removeChildAt(0);
+				var child:DisplayObject = container.getChildAt(0);
+				container.removeChild(child);
 			}
 			switch(_currentId)
 			{
 				case 1:
 				{
-					container.addChild(new MProfileView());
+					container.addChildAt(new MProfileView(_currentId),0);
 					break;
 				}
 				case 4:
 				{
-					container.addChild(new MAbilityView());
+					container.addChildAt(new MAbilityView(_currentId),0);
 					break;
 				}
 				case 6:
 				{
-					container.addChild(new MBlogView());
+					container.addChildAt(new MBlogView(_currentId),0);
+					break;
+				}
+				case 7:
+				{
+					container.addChildAt(new MHelpView(_currentId),0);
 					break;
 				}
 				default:
 				{
-					container.addChild(new MProfileView());
+					container.addChildAt(new MProfileView(_currentId),0);
 					break;
 				}
 			}

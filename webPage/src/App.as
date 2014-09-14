@@ -63,7 +63,8 @@ package {
 			stage.stageFocusRect = false;
 			stage.tabChildren = false;
 			Security.allowDomain("*");
-
+			Security.allowInsecureDomain("*");
+//			Security.loadPolicyFile("http://haroel.github.io/blog/fl/crossdomain.xml");
 			//覆盖配置
 			var gameVars:Object = stage.loaderInfo.parameters;
 			if (gameVars != null) {

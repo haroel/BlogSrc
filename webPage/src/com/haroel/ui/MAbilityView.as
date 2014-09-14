@@ -11,16 +11,27 @@ package com.haroel.ui
 	import morn.core.components.View;
 	import morn.core.handlers.Handler;
 
-	public class MAbilityView extends View
+	public class MAbilityView extends View implements IMView
 	{
 		//存储个人技能配置数据
 		private static var skillDataArray:Array = [];
 		
-		public function MAbilityView()
+		private var _id:int = -1;
+		public function set id(value:int):void
 		{
-			App.log.debug("MAbilityView()");
-			super();
+			_id = value;
 		}
+		public function get id():int
+		{
+			return _id;
+		}
+		public function MAbilityView(value:int)
+		{
+			id = value;
+			App.log.debug("MAbilityView()");
+//			super();
+		}
+
 		override protected function createChildren():void
 		{		
 //			if (skillDataArray.length < 1)
@@ -88,7 +99,6 @@ package com.haroel.ui
 			for each(var obj:Object in tempVO.items)
 			{
 				var bar:MovieClip = new cls();
-//				new TextField
 				(TextField)(bar.m_label).text = obj.label;
 				(MovieClip)(bar.m_barTrack).scaleY = 0;
 				
@@ -98,7 +108,6 @@ package com.haroel.ui
 				container.addChild(bar);
 				posX += 50;
 			}
-//			new TweenLite
 			var arr3:Array = [];
 			for(var i:int = 0;i < arr2.length;i++)
 			{

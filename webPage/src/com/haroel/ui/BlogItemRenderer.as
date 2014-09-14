@@ -38,6 +38,7 @@ package com.haroel.ui
 		public var dataLabel:Label;
 
 		private var _data:MBlogInfoVO = null;
+		public static const HEIGHT:Number = 90;
 		
 		public function BlogItemRenderer()
 		{
@@ -51,7 +52,6 @@ package com.haroel.ui
 		{
 			this.createView(new XML(data));
 			this.setInfo(_data);
-			
 			this.addEventListener(MouseEvent.ROLL_OUT,mouseHandler);
 			this.addEventListener(MouseEvent.ROLL_OVER,mouseHandler);
 			
@@ -80,16 +80,22 @@ package com.haroel.ui
 				return;
 			}
 			_data = value;
-			
+
 			if (m_bg)
 			{
-				this.titleLabel.text = _data.title;	
-				this.desLabel.text = _data.summary;
-				this.m_refLabel.text = _data.diggs.toString();
-				this.m_readLabel.text = _data.views.toString();
-				this.m_comLabel.text = _data.comments.toString();
-				dataLabel.text = "posted @ " + _data.publishedDate;
+				App.render.callLater(delayFuc);
+
 			}
+		}
+		private function delayFuc():void
+		{
+			this.titleLabel.text = _data.title;	
+			this.desLabel.text = _data.summary;
+			this.m_refLabel.text = _data.diggs.toString();
+			this.m_readLabel.text = _data.views.toString();
+			this.m_comLabel.text = _data.comments.toString();
+			var arr:Array =  _data.publishedDate.split("T");
+			dataLabel.text = "posted @ " + arr[0];
 		}
 	}
 }

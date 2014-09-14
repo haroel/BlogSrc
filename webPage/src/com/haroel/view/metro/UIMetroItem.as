@@ -1,6 +1,8 @@
 package com.haroel.view.metro
 {
 	import com.greensock.TweenLite;
+	import com.greensock.TweenMax;
+	import com.greensock.easing.Back;
 	import com.haroel.events.DDEvent;
 	import com.haroel.events.UIEventDispatcher;
 	import com.haroel.model.MenuItemVO;
@@ -205,9 +207,15 @@ package com.haroel.view.metro
 		public function playCreateAnimation(p:Point):void
 		{
 			x = p.x;
-			y = -300;
-			
-			TweenLite.to(this, 0.5, {delay:Math.random() * 0.8,y:p.y});
+			y = Main.stageHeight + 300;
+//			new TweenMax
+			var d:Number = 0.1* (_menuItemVO.id - 1);
+			if(d < 0)
+			{
+				d = 0;
+			}
+//			TweenMax.to(this, 1, {delay:d,ease:Back.easeInOut,bezier:{autoRotate:false, values:[{x:p.x, y:p.y}]}});
+			TweenMax.to(this, 1.5, {delay:d,ease:Back.easeInOut,x:p.x, y:p.y});
 		}
 		public function playFadeInAnimation(p:Point):void
 		{

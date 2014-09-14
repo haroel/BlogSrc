@@ -59,7 +59,7 @@ package
 			{
 				App.log.debug(value);
 //				trace(value);	
-			}
+			}	
 		}
 
 		private function loadProgress(value:Number):void

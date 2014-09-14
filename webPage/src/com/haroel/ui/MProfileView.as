@@ -15,7 +15,7 @@ package com.haroel.ui
 	import morn.core.events.UIEvent;
 	import morn.core.handlers.Handler;
 
-	public class MProfileView extends View
+	public class MProfileView extends View implements IMView
 	{
 //		public var m_collBtn:LinkButton;
 		public var m_avatar:Image;
@@ -24,9 +24,20 @@ package com.haroel.ui
 		public var m_wxBtn:LinkButton;
 		public var m_cnBtn:LinkButton;
 
-		public function MProfileView()
+		private var _id:int = -1;
+		public function set id(value:int):void
 		{
-			super();
+			_id = value;
+		}
+		public function get id():int
+		{
+			return _id;
+		}
+		
+		public function MProfileView(value:int)
+		{
+			id = value;
+//			super();
 		}
 		override protected function createChildren():void
 		{			
@@ -36,7 +47,6 @@ package com.haroel.ui
 		{
 			var contentXml:XML = new XML(content);
 			createView(contentXml);
-			this.visible = false;
 			m_avatar.addEventListener(UIEvent.IMAGE_LOADED,imgLoadedHandler);
 			
 			m_weiboLabel.addEventListener(MouseEvent.ROLL_OVER,weiboLmouseHandler);
@@ -127,7 +137,6 @@ package com.haroel.ui
 
 		private function imgLoadedHandler(evt:UIEvent):void
 		{
-			this.visible = true;
 		}
 		 override public function remove():void
 		 {
