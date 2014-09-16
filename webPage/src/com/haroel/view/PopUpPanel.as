@@ -8,6 +8,7 @@ package com.haroel.view
 	import com.haroel.ui.IMView;
 	import com.haroel.ui.MAbilityView;
 	import com.haroel.ui.MBlogView;
+	import com.haroel.ui.MExpView;
 	import com.haroel.ui.MHelpView;
 	import com.haroel.ui.MProfileView;
 	
@@ -104,6 +105,11 @@ package com.haroel.view
 				case 4:
 				{
 					container.addChildAt(new MAbilityView(_currentId),0);
+					break;
+				}
+				case 5:
+				{
+					container.addChildAt(new MExpView(_currentId),0);
 					break;
 				}
 				case 6:

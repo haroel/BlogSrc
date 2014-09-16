@@ -55,9 +55,9 @@ package com.haroel.view
 			{
 				var cls:Class =App.asset.getClass(ResourceConfig.CLS_MAINUI);
 				_material = new cls();
-				(MovieClip)(_material.m_bg).alpha = 0;
+//				(MovieClip)(_material.m_bg).alpha = 0;
 				
-				TweenLite.to(_material.m_bg,0.6,{alpha:1.0});
+//				TweenLite.to(_material.m_bg,0.6,{alpha:1.0});
 				
 				_root.addChild(_material);
 				
@@ -200,10 +200,10 @@ package com.haroel.view
 //					TweenMax.to(this, 1.5, {delay:d,ease:Back.easeInOut,x:p.x, y:p.y});
 					//			TweenMax.to(this, 1, {delay:d,ease:Back.easeInOut,bezier:{autoRotate:false, values:[{x:p.x, y:p.y}]}});
 
-//					TweenMax.to(iconItemC,0.7,{x:135 + iconItemC.width/2 + i * (iconItemC.width + gap),
-//						y:Main.stageHeight - iconItemC.height/2 - 4});
-					TweenMax.to(iconItemC, 0.6, {bezier:{autoRotate:false,
-						values:[{x:135 + iconItemC.width/2 + i * (iconItemC.width + gap), y:Main.stageHeight - iconItemC.height/2 - 4}]}});
+					TweenLite.to(iconItemC,0.7,{x:135 + iconItemC.width/2 + i * (iconItemC.width + gap),
+						y:Main.stageHeight - iconItemC.height/2 - 4});
+//					TweenMax.to(iconItemC, 0.6, {bezier:{autoRotate:false,
+//						values:[{x:135 + iconItemC.width/2 + i * (iconItemC.width + gap), y:Main.stageHeight - iconItemC.height/2 - 4}]}});
 				}
 			}
 		}
@@ -238,7 +238,7 @@ package com.haroel.view
 					var animatePoint:Point = _animaterLayer.globalToLocal(globalPoint);
 					
 					var iconItem:IconItemRenderer = _dockItemHash.getItem(info.id) as IconItemRenderer;
-					TweenLite.to(iconItem,0.6,{delay:0.5,x:animatePoint.x,y:animatePoint.y,onComplete:completeHandler,onCompleteParams:[item,iconItem]});
+					TweenLite.to(iconItem,0.7,{delay:0.5,x:animatePoint.x,y:animatePoint.y,onComplete:completeHandler,onCompleteParams:[item,iconItem]});
 					function completeHandler(value1:UIMetroItem,value2:IconItemRenderer):void
 					{
 						value1.addIconItem(value2);

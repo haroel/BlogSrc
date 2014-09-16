@@ -152,11 +152,11 @@ package com.haroel.view.metro
 			_material.mouseChildren = false;
 //			_material.mouseEnabled = false;
 			
-			var l:Label = new Label();
-			l.text = "个人简介";
-
-			l.skin = "dockItemTip_bg";
-			l.sizeGrid = "23,0,23,0";
+//			var l:Label = new Label();
+//			l.text = "个人简介";
+//
+//			l.skin = "dockItemTip_bg";
+//			l.sizeGrid = "23,0,23,0";
 //			l.background = true;
 			
 //			this.addChild(l);
@@ -207,7 +207,7 @@ package com.haroel.view.metro
 		public function playCreateAnimation(p:Point):void
 		{
 			x = p.x;
-			y = Main.stageHeight + 300;
+			y = -300;
 //			new TweenMax
 			var d:Number = 0.1* (_menuItemVO.id - 1);
 			if(d < 0)
