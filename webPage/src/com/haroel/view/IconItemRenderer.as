@@ -55,7 +55,8 @@ package com.haroel.view
 //			_iconBitmap.width = 64;
 //			_iconBitmap.height = 64;
 			_iconBitmap.scaleX = _iconBitmap.scaleY = 0.5;
-			_iconBitmap.x = (_material.width - _iconBitmap.width)/2;
+			_iconBitmap.x = - _iconBitmap.width/2;
+			_iconBitmap.y = -_iconBitmap.height/2;
 			_iconBitmap.name = "icon";
 			(MovieClip)(_material.m_iconMC).addChild(_iconBitmap);
 			
